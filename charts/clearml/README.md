@@ -147,7 +147,7 @@ Kubernetes: `>= 1.21.0-0`
 |------------|------|---------|
 | https://charts.bitnami.com/bitnami | mongodb | 13.18.5 |
 | https://charts.bitnami.com/bitnami | redis | 17.8.3 |
-| https://helm.elastic.co | elasticsearch | 7.17.3 |
+| https://charts.bitnami.com/bitnami  | elasticsearch | 7.17.3 |
 
 ## Values
 
