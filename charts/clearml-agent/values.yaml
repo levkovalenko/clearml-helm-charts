@@ -81,7 +81,7 @@ agentk8sglue:
   webServerUrlReference: "https://app.clear.ml"
 
   # -- default container image for ClearML Task pod
-  defaultContainerImage: ubuntu:18.04
+  defaultContainerImage: python:3.12.0-slim-bookworm
   # -- ClearML queue this agent will consume. Multiple queues can be specified with the following format: queue1,queue2,queue3
   queue: default
   # -- if ClearML queue does not exist, it will be create it if the value is set to true
@@ -93,7 +93,9 @@ agentk8sglue:
   annotations: {}
     # key1: value1
   # -- Extra Environment variables for Glue Agent
-  extraEnvs: []
+  extraEnvs:
+  - name: CLEARML_AGENT_UPDATE_VERSION
+    value: "==1.9.2"
     # - name: PYTHONPATH
     #   value: "somepath"
   # -- container securityContext setup for Agent pod (example in values.yaml comments)
@@ -181,6 +183,8 @@ agentk8sglue:
       #     with test content
     # -- environment variables for pods spawned to consume ClearML Task (example in values.yaml comments)
     env: []
+      # - name: CLEARML_AGENT_EXTRA_PYTHON_PATH
+      #   value:
       # # to setup access to private repo, setup secret with git credentials:
       # - name: CLEARML_AGENT_GIT_USER
       #   value: mygitusername
