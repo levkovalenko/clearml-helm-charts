@@ -73,7 +73,9 @@ clearml_serving_inference:
   # -- Extra environment variables
   extraEnvironment: []
   # -- Extra Python Packages to be installed in running pods
-  extraPythonPackages: []
+  extraPythonPackages:
+  - nltk==3.9.1
+  - polars>=1.31.0,<2
   #  - numpy==1.22.4
   #  - pandas==1.4.2
   # -- reference for files declared in existing ConfigMap will be mounted and read by pod (examples in values.yaml)
@@ -130,8 +132,9 @@ clearml_serving_triton:
   # -- Extra environment variables
   extraEnvironment: []
   # -- Extra Python Packages to be installed in running pods
-  extraPythonPackages: []
-  #  - numpy==1.22.4
+  extraPythonPackages:
+  - nltk==3.9.1
+  - polars>=1.31.0,<2
   #  - pandas==1.4.2
   # -- reference for files declared in existing ConfigMap will be mounted and read by pod (examples in values.yaml)
   existingAdditionalConfigsConfigMap: ""
